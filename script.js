@@ -7,11 +7,7 @@ const content = document.getElementById('content');
 
 // Skapa funktion [Uppgift 5]
 function handleInputChange(e) {
-    const elementName = e.target.name;
-    if (elementName === 'content') {
-        const contentValue = e.target.value;
-        divElement.innerHTML = contentValue;
-    } 
+    divElement.innerHTML = e.target.value;
 }
 
 function handleTextFieldChange(e) {
