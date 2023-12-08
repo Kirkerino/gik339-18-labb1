@@ -7,13 +7,19 @@ const content = document.getElementById('content');
 
 // Skapa funktion [Uppgift 5]
 function handleInputChange(e) {
-    console.log('Event triggered by:', e.target);
     const elementName = e.target.name;
-
     if (elementName === 'content') {
         const contentValue = e.target.value;
         divElement.innerHTML = contentValue;
     } 
+}
+
+function handleTextFieldChange(e) {
+    console.log('Event triggered by text field:', e.target);
+}
+
+for (let i = 0; i < textfields.length; i++) {
+    textfields[i].addEventListener('input', handleTextFieldChange);
 }
 
 // Koppla eventlyssnare [Uppgift 6]
@@ -25,12 +31,5 @@ checkbox.addEventListener('change', function() {
 });
 
 button.addEventListener('click', function() {
-    if (divElement.style.display === 'none') {
-        divElement.style.display = '';
-        myButton.innerHTML = 'Ta bort';
-    }
-    else {
-        divElement.style.display = 'none';
-        myButton.innerHTML = 'Visa';
-    }
+    divElement.remove();
 });
